@@ -1,5 +1,4 @@
-from random import choice
-#gets the choice function from random library
+from random import choice, randint#gets the choice function from random library
 
 from flask import Flask, render_template, request
 #importing the class Flask and the functions render_template and request from flask
@@ -77,7 +76,11 @@ def show_madlib():
     adjective_value = request.args.get("adjective")
     player = request.args.get("person")
 
-    return render_template("madlib.html", person=player, noun=noun_value, color=color_value, adjective=adjective_value)
+    story = randint(1,4)
+
+    return render_template("madlib.html", person=player, story=story,
+                            noun=noun_value, color=color_value, 
+                            adjective=adjective_value)
 
 
 if __name__ == '__main__':

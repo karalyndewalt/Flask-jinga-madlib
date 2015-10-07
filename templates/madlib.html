@@ -1,12 +1,22 @@
 
 <!DOCTYPE html>
 <html>
+<link rel="madlibs-stylesheet" href="./madlibs-stylesheet.css">
 <head>
   <title>A Madlib</title>
+  <thead id="A madlib game">The madlib Game!</thead>
+
 </head>
 <body>
-    There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab. When {{ person }} went to pick it up, it burst into flames in a totally {{ adjective }} way.
+    {% if story == 1 %}
+        There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab. When {{ person }} went to pick it up, it burst into flames in a totally {{ adjective }} way.
+    {% elif story == 2 %}
+        There twice was a {{ color }} {{ noun }} sitting in the Hackbright Lab. When {{ person }} went to pick it up, it burst into flames in a totally {{ adjective }} way.
+    {% else %}
+        There thrice was a {{ color }} {{ noun }} sitting in the Hackbright Lab. When {{ person }} went to pick it up, it burst into flames in a totally {{ adjective }} way.
+    {% endif %}
 
+    
     <form action="/game">
 
         <input type="hidden" name="person" value="{{person}}">
@@ -15,7 +25,7 @@
 
     <form action="/goodbye">
         <input type="hidden" name="person" value="{{person}}">
-        <label id="Quit?">Quit? <input type="submit"></label>
+        <label id="Quit?">Quit? <input name="do-next" value="Quit" type="submit"></label>
     </form>
 
 </body>
