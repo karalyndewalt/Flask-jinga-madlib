@@ -5,6 +5,18 @@
   <title>A Madlib</title>
 </head>
 <body>
-    There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab. When {{ person }} went to pick it up, it burst into flames in a totally {{ adjective }} way
+    There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab. When {{ person }} went to pick it up, it burst into flames in a totally {{ adjective }} way.
+
+    <form action="/game">
+
+        <input type="hidden" name="person" value="{{person}}">
+        <label id="Play again?">Play again? <input type="submit"></label>
+    </form>
+
+    <form action="/goodbye">
+        <input type="hidden" name="person" value="{{person}}">
+        <label id="Quit?">Quit? <input type="submit"></label>
+    </form>
+
 </body>
 </html>

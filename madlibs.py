@@ -55,6 +55,21 @@ def show_game_form():
     else: 
         return render_template("game.html", person=player)
 
+@app.route('/goodbye')
+def goodbye():
+    player = request.args.get("person")
+    #value = request.args.get("")
+
+    AWESOMENESS = [
+        'awesome', 'terrific', 'fantastic', 'neato', 'fantabulous', 'wowza', 'oh-so-not-meh',
+        'brilliant', 'ducky', 'coolio', 'incredible', 'wonderful', 'smashing', 'lovely']
+
+    compliment = choice(AWESOMENESS)
+
+    return render_template("goodbye.html", person=player, compliment=compliment)
+
+
+
 @app.route('/madlib')
 def show_madlib():
     noun_value = request.args.get("noun")
